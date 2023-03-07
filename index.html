@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="header">
+            <header>Cumae Public Library</header>
+            <p><em>In wisdom we trust</em></p>
+        </div>
+        <div class="logo">
+            <img src="images/logo.png" alt="libary logo">
+        </div>
+
+        <div class="form">
+            <form>
+                <div class="form-item">
+                    <label for="title">* TITLE</label>
+                    <input type="text" class="title" name="title" id="title" required>
+                </div>
+               
+                <div class="form-item">
+                    <label for="author">* AUTHOR</label>
+                    <input type="text" class="author" name="author" id="author" required>
+                </div>
+
+                <div class="form-item">
+                    <label for="pages">* PAGES</label>
+                    <input type="number" class="pages" name="pages" id="pages" required>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="collection"></div>
+
+        <div class="buttons">
+            <button type="button" class="donate">Donate Book</button>
+            <button type="button" class="browse">Browse Collection</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
