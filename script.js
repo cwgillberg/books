@@ -32,8 +32,8 @@ function mockLibrary() {
     myLibrary.push(book3);
 }
 
-function Book(name, author, pages) {
-    this.name = name;
+function Book(title, author, pages) {
+    this.title = title;
     this.author = author;
     this.pages = pages;
 }
@@ -42,11 +42,63 @@ function addBookToLibrary() {
 
 }
 
+/*
+function make card
+    set title -> title
+    set author -> author
+    set pages -> pages
 
-//TODO: Fix table concept etc :)
+
+*/
+
+function makeCard(title, author, pages) {
+    let card = document.createElement('div');
+    card.className = 'card';
+
+    let cardLeft = document.createElement('div');
+    cardLeft.className = 'card-left';
+
+    let cardRight = document.createElement('div');
+    cardRight.className = 'card-right';
+
+    let cardTitle = document.createElement('p');
+    cardTitle.style.textDecoration = 'underline';
+    cardTitle.innerHTML = title;
+
+    let cardAuthor = document.createElement('p');
+    cardAuthor.style.fontStyle = 'italic';
+    cardAuthor.innerHTML = author;
+
+    let cardPages = document.createElement('p');
+    cardPages.innerHTML = `${pages} pages`;
+
+    let removeButton = document.createElement('button');
+    removeButton.innerHTML = 'withdraw title';
+
+    removeButton.addEventListener('click', () => {
+        withdraw(title);
+    });
+
+    cardLeft.appendChild(cardTitle);
+    cardLeft.appendChild(cardAuthor);
+    cardLeft.appendChild(cardPages);
+
+    cardRight.appendChild(removeButton);
+
+    card.appendChild(cardLeft);
+    card.appendChild(cardRight);
+
+    return card;
+}
+
 function displayLibrary() {
     for(let i = 0; i < myLibrary.length; i++) {
-        const displayed = document.createTextNode(myLibrary[i].name);
-        collection.appendChild(displayed);
+        collection.appendChild(makeCard(myLibrary[i].title, myLibrary[i].author, myLibrary[i].pages));
     }
+
+   
+}
+
+function withdraw(title) {
+
 }
